@@ -1,0 +1,183 @@
+/* ============================================================
+ * Cards - Desktop Consultorio
+ *
+ * Una sola sombra ligera, radios 8-10px, espaciado escala de 4
+ * ============================================================ */
+
+/* --- Card Base --- */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, 2);
+}
+
+.card-header {
+    -fx-padding: 16 16 12 16;
+    -fx-border-color: transparent transparent #f0f3f6 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.card-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7f8e;
+}
+
+.card-body {
+    -fx-padding: 16;
+}
+
+.card-footer {
+    -fx-padding: 12 16 16 16;
+    -fx-border-color: #f0f3f6 transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* --- Metric Card --- */
+.metric-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, 2);
+    -fx-min-width: 180;
+    -fx-pref-width: 220;
+}
+
+.metric-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0, 0, 4);
+    -fx-translate-y: -2;
+}
+
+.metric-icon {
+    -fx-font-size: 22px;
+}
+
+.metric-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6b7f8e;
+    -fx-font-weight: 500;
+}
+
+.metric-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.metric-change {
+    -fx-font-size: 11px;
+}
+
+.metric-change.positive {
+    -fx-text-fill: #22c55e;
+}
+
+.metric-change.negative {
+    -fx-text-fill: #ef4444;
+}
+
+/* Colores por tipo de métrica */
+.metric-pacientes .metric-value { -fx-text-fill: #228767; }
+.metric-citas .metric-value { -fx-text-fill: #3b82f6; }
+.metric-cobros .metric-value { -fx-text-fill: #f59e0b; }
+.metric-profesionales .metric-value { -fx-text-fill: #8b5cf6; }
+.metric-atenciones .metric-value { -fx-text-fill: #06b6d4; }
+
+/* --- Section Panel --- */
+.section-panel {
+    -fx-spacing: 12;
+}
+
+.section-panel-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a2a36;
+}
+
+/* --- Professional Card --- */
+.professional-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 20;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, 2);
+    -fx-cursor: hand;
+}
+
+.professional-card:hover {
+    -fx-border-color: #228767;
+    -fx-effect: dropshadow(gaussian, rgba(34,135,103,0.12), 12, 0, 0, 3);
+}
+
+.professional-avatar {
+    -fx-font-size: 48px;
+    -fx-padding: 0 0 12 0;
+}
+
+.professional-name {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.professional-specialty {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7f8e;
+}
+
+.professional-stats {
+    -fx-font-size: 11px;
+    -fx-text-fill: #6b7f8e;
+    -fx-padding: 8 0 0 0;
+}
+
+/* --- Info Card variants --- */
+.info-card {
+    -fx-background-color: #eff6ff;
+    -fx-border-color: #bfdbfe;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 16;
+}
+
+.warning-card {
+    -fx-background-color: #fffbeb;
+    -fx-border-color: #fde68a;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 16;
+}
+
+.error-card {
+    -fx-background-color: #fef2f2;
+    -fx-border-color: #fecaca;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 16;
+}
+
+.success-card {
+    -fx-background-color: #f0fdf4;
+    -fx-border-color: #bbf7d0;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 16;
+}

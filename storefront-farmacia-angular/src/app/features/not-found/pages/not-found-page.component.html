@@ -1,0 +1,22 @@
+<section class="page-shell not-found-page">
+  <app-breadcrumbs [items]="breadcrumbs"></app-breadcrumbs>
+
+  <div class="not-found-page__card">
+    <span class="not-found-page__code">404</span>
+    <h1>Página no encontrada</h1>
+    <p>
+      La ruta que intentaste abrir no existe dentro del storefront público de farmacia.
+    </p>
+    <div class="not-found-page__actions">
+      <a
+        *ngFor="let action of actions; trackBy: trackByLabel"
+        class="button"
+        [class.button--primary]="action.routerLink === '/'"
+        [class.button--ghost]="action.routerLink !== '/'"
+        [routerLink]="action.routerLink"
+      >
+        {{ action.label }}
+      </a>
+    </div>
+  </div>
+</section>

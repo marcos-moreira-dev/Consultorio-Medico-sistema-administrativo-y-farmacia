@@ -1,0 +1,29 @@
+.top-banner {
+  background: var(--color-accent-strong);
+  color: var(--color-surface);
+  font-size: var(--font-size-xs);
+}
+
+.top-banner__content {
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  justify-content: center;
+  text-align: center;
+}
+
+.top-banner__separator {
+  opacity: 0.55;
+}
+
+@media (max-width: 640px) {
+  .top-banner__content {
+    flex-wrap: wrap;
+    padding-block: var(--space-8);
+  }
+
+  .top-banner__separator {
+    display: none;
+  }
+}

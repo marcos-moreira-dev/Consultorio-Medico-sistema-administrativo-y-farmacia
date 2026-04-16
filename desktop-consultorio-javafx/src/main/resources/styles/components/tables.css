@@ -1,0 +1,101 @@
+/* ============================================================
+ * Tablas - Desktop Consultorio
+ *
+ * Filas alternadas, hover, selección, encabezados sobrios
+ * ============================================================ */
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-width: 1;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f0f3f6;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-padding: 12 12 12 12;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #e2e8f0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #3d5260;
+    -fx-alignment: center-left;
+}
+
+.table-view .column-header:hover {
+    -fx-background-color: #e2e8f0;
+}
+
+/* --- Filas --- */
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #f0f3f6 transparent;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #f8fafc;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #e6f5ef;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: rgba(34,135,103,0.08);
+    -fx-border-color: #228767;
+}
+
+.table-view .table-row-cell:empty {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* --- Celdas --- */
+.table-view .table-cell {
+    -fx-padding: 10 12 10 12;
+    -fx-font-size: 13px;
+    -fx-text-fill: #1a2a36;
+    -fx-alignment: center-left;
+    -fx-border-width: 0;
+}
+
+/* --- Placeholder --- */
+.table-view .placeholder {
+    -fx-background-color: transparent;
+}
+
+.table-view .placeholder .label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7f8e;
+}
+
+/* --- Scrollbar --- */
+.table-view .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 8;
+}
+
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 4;
+}
+
+.table-view .scroll-bar:vertical .increment-button,
+.table-view .scroll-bar:vertical .decrement-button {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+/* --- Sort Indicator --- */
+.table-view .arrow {
+    -fx-background-color: #6b7f8e;
+}

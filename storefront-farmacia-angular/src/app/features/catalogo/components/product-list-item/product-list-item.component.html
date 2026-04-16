@@ -1,0 +1,29 @@
+<article class="product-list-item">
+  <a class="product-list-item__media" [routerLink]="['/producto', product.productoId]">
+    <img [src]="product.imagenSrc | safeImage" [alt]="product.nombreProducto" loading="lazy" />
+  </a>
+
+  <div class="product-list-item__body">
+    <div class="product-list-item__header">
+      <div>
+        <p class="product-list-item__category" *ngIf="product.nombreCategoria">{{ product.nombreCategoria }}</p>
+        <a class="product-list-item__title" [routerLink]="['/producto', product.productoId]">
+          {{ product.nombreProducto }}
+        </a>
+      </div>
+
+      <app-availability-badge
+        [estado]="product.estadoDisponibilidad"
+        [disponible]="product.disponible"
+      ></app-availability-badge>
+    </div>
+
+    <p class="product-list-item__presentation">{{ product.presentacion }}</p>
+    <p class="product-list-item__description" *ngIf="product.descripcionBreve">{{ product.descripcionBreve }}</p>
+
+    <div class="product-list-item__footer">
+      <strong>{{ product.precioVisible | money }}</strong>
+      <a class="button button--ghost" [routerLink]="['/producto', product.productoId]">Ver detalle</a>
+    </div>
+  </div>
+</article>

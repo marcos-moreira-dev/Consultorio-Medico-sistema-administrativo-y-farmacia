@@ -1,0 +1,32 @@
+:root {
+  --color-background: #f8fbf9;
+  --color-background-muted: #eef6f2;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f4f8f6;
+  --color-border-soft: #d8e7e0;
+  --color-text: #12302a;
+  --color-text-secondary: #36554d;
+  --color-text-muted: #5e7a72;
+  --color-primary: #228767;
+  --color-primary-strong: #16674f;
+  --color-accent: #49b69a;
+  --color-accent-strong: #145846;
+  --color-success-soft: #e9f7f1;
+  --color-success-text: #1c6b4d;
+  --color-warning-soft: #fff5df;
+  --color-warning-text: #9a6610;
+  --color-danger-soft: #fff0ef;
+  --color-danger-text: #b34a48;
+
+  /* Gradientes de marca para hero y paneles destacados */
+  --gradient-hero-surface: linear-gradient(160deg, rgba(26, 130, 98, 0.96), rgba(17, 78, 62, 0.98));
+  --gradient-logo-bg: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,250,248,0.98));
+  --gradient-hero-text-overlay: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.82) 100%);
+
+  /* Colores del footer (verde oscuro de marca) */
+  --color-footer-bg: #0f4e40;
+  --color-footer-bg-dark: #0b3c32;
+  --color-footer-text: rgba(255, 255, 255, 0.86);
+  --color-footer-link-hover: #d7fff0;
+  --gradient-footer: linear-gradient(180deg, var(--color-footer-bg) 0%, var(--color-footer-bg-dark) 100%);
+}

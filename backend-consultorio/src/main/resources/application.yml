@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: backend-consultorio
+  profiles:
+    default: dev
+  main:
+    allow-circular-references: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: consultorio
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: false
+    locations: classpath:db/migration
+    schemas: consultorio
+    default-schema: consultorio
+    baseline-on-migrate: true
+  jackson:
+    time-zone: UTC
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+  messages:
+    basename: messages/messages,messages/errors
+    encoding: UTF-8
+    fallback-to-system-locale: false
+
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /
+
+springdoc:
+  api-docs:
+    path: /api/v1/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    root: INFO
+
+app:
+  cors:
+    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000,http://localhost:4200}
+  security:
+    jwt:
+      secret: ${APP_JWT_SECRET:CAMBIAR_ESTA_CLAVE_LARGA_Y_SEGURA_EN_PRODUCCION_1234567890_CAMBIAR}
+      expiration-seconds: ${APP_JWT_EXPIRATION_SECONDS:3600}

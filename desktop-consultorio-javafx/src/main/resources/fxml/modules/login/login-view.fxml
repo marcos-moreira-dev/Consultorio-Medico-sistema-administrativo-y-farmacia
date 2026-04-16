@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="dev.marcosmoreira.desktopconsultorio.modules.login.controller.LoginController"
+            prefHeight="760.0"
+            prefWidth="1180.0"
+            styleClass="login-root">
+    <center>
+        <HBox alignment="CENTER" spacing="0" styleClass="login-shell">
+            <StackPane styleClass="login-brand-panel">
+                <ImageView fx:id="brandingImageView" fitHeight="380" fitWidth="500" preserveRatio="true" smooth="true" />
+            </StackPane>
+
+            <StackPane HBox.hgrow="ALWAYS" styleClass="login-form-panel">
+                <StackPane alignment="CENTER">
+                    <VBox spacing="16" styleClass="login-card" maxWidth="480">
+                        <padding>
+                            <Insets top="28" right="32" bottom="28" left="32"/>
+                        </padding>
+
+                        <HBox spacing="14" alignment="CENTER_LEFT">
+                            <ImageView fx:id="brandingImageViewSmall" fitHeight="42" fitWidth="42" preserveRatio="true" smooth="true" />
+                            <VBox spacing="4">
+                                <Label text="Consultorio Médico" styleClass="app-title"/>
+                                <Label text="Ingreso al consultorio" styleClass="muted-label"/>
+                            </VBox>
+                        </HBox>
+
+                        <VBox spacing="6">
+                            <Label text="Usuario" styleClass="field-label"/>
+                            <TextField fx:id="usernameField" promptText="admin.consultorio"/>
+                        </VBox>
+
+                        <VBox spacing="6">
+                            <Label text="Contraseña" styleClass="field-label"/>
+                            <PasswordField fx:id="passwordField" promptText="Ingresa tu contraseña"/>
+                        </VBox>
+
+                        <Button fx:id="loginButton" text="Entrar" onAction="#onLogin" defaultButton="true" styleClass="primary-button"/>
+
+                        <Label fx:id="statusLabel" wrapText="true" styleClass="status-label" visible="false"/>
+
+                        <VBox spacing="4" styleClass="credentials-hint">
+                            <padding>
+                                <Insets top="10" right="12" bottom="10" left="12"/>
+                            </padding>
+                            <Label text="Credenciales de prueba:" styleClass="hint-label"/>
+                            <HBox spacing="8">
+                                <Label text="Usuario:" styleClass="hint-label"/>
+                                <Label text="admin.consultorio" styleClass="hint-value"/>
+                            </HBox>
+                            <HBox spacing="8">
+                                <Label text="Contraseña:" styleClass="hint-label"/>
+                                <Label text="123456" styleClass="hint-value"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </StackPane>
+            </StackPane>
+        </HBox>
+    </center>
+</BorderPane>

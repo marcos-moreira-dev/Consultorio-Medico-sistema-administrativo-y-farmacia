@@ -1,0 +1,170 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.navbar__inner {
+  min-height: 5.4rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--space-24);
+}
+
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-16);
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar__logo {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: contain;
+  border-radius: 18px;
+  background: var(--gradient-logo-bg);
+  box-shadow: var(--shadow-soft);
+  padding: 0.28rem;
+}
+
+.navbar__brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.navbar__brand-copy strong {
+  font-size: calc(var(--font-size-md) + 0.22rem);
+}
+
+.navbar__brand-copy small {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.navbar__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  justify-self: end;
+  padding: var(--space-10) var(--space-14);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font: inherit;
+  font-weight: 700;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+}
+
+.navbar__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-24);
+}
+
+.navbar__nav {
+  display: inline-flex;
+  justify-content: center;
+  gap: var(--space-20);
+}
+
+.navbar__nav a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar__nav a.is-active,
+.navbar__nav a:hover {
+  color: var(--color-primary-strong);
+}
+
+.navbar__search {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.navbar__search input {
+  width: min(20rem, 32vw);
+}
+
+/**
+ * Estado de búsqueda activa: el botón muestra un spinner
+ * y reduce opacidad para indicar que la navegación está en curso.
+ */
+.navbar__search-text {
+  display: inline;
+}
+
+.navbar__search-spinner {
+  display: none;
+}
+
+.button.is-searching {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.button.is-searching .navbar__search-text {
+  display: none;
+}
+
+.button.is-searching .navbar__search-spinner {
+  display: inline;
+  animation: navbar-search-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes navbar-search-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 980px) {
+  .navbar__inner {
+    grid-template-columns: 1fr auto;
+    padding-block: var(--space-16);
+  }
+
+  .navbar__toggle {
+    display: inline-flex;
+  }
+
+  .navbar__panel {
+    grid-column: 1 / -1;
+    display: none;
+    gap: var(--space-16);
+    padding-top: var(--space-12);
+  }
+
+  .navbar__panel.is-open {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .navbar__nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-12);
+  }
+
+  .navbar__search {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .navbar__search input {
+    width: 100%;
+  }
+}

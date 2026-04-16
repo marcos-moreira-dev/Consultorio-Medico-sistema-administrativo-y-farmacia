@@ -1,0 +1,16 @@
+.page-section {
+  display: grid;
+  gap: var(--space-20);
+  padding-block: var(--space-16) var(--space-8);
+}
+
+.page-section--compact {
+  padding-bottom: 0;
+}
+
+.page-section__actions,
+.page-section__footer {
+  display: flex;
+  justify-content: center;
+}
+

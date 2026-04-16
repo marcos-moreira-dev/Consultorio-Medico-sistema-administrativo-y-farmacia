@@ -1,0 +1,12 @@
+<div *ngIf="loading" class="product-grid">
+  <app-product-skeleton
+    *ngFor="let item of skeletonItems(); trackBy: trackByIndex"
+  ></app-product-skeleton>
+</div>
+
+<div *ngIf="!loading" class="product-grid">
+  <app-product-card
+    *ngFor="let item of items; trackBy: trackByProductId"
+    [product]="item"
+  ></app-product-card>
+</div>

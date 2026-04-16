@@ -1,0 +1,27 @@
+.featured-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--space-16);
+}
+
+.featured-categories__item {
+  display: grid;
+  gap: var(--space-8);
+  min-height: 6.5rem;
+  padding: var(--space-20);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  box-shadow: var(--shadow-card);
+}
+
+.featured-categories__item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(31, 139, 104, 0.18);
+}
+
+.featured-categories__item span {
+  color: var(--color-text-muted);
+}

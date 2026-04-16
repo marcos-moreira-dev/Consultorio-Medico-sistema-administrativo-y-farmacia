@@ -1,0 +1,74 @@
+/* ============================================================
+ * Accesibilidad y motion preferences
+ *
+ * Este archivo concentra todas las reglas de accesibilidad
+ * visual y de movimiento del storefront.
+ *
+ * - focus-visible: indicador de foco para navegación por teclado
+ * - scroll-behavior: desplazamiento suave en toda la página
+ * - prefers-reduced-motion: desactiva animaciones para usuarios
+ *   sensibles al movimiento (vestibular disorders)
+ * - skip-link: enlace oculto para saltar al contenido principal
+ * ============================================================ */
+
+/* Scroll suave en toda la página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Foco visible para navegación por teclado */
+:focus-visible {
+  outline: 3px solid rgba(45, 147, 112, 0.24);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+ * Reduced motion: desactivar animaciones para usuarios que
+ * lo prefieren. Se aplica a todas las transiciones y animaciones.
+ * ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+ * Skip link: enlace oculto que aparece al enfocar con Tab,
+ * permitiendo saltar directamente al contenido principal.
+ * ============================================================ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* Texto solo para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

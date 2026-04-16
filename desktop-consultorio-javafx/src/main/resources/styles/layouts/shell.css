@@ -1,0 +1,265 @@
+.shell-root {
+    -fx-background-color: #f8fafc;
+}
+
+.sidebar {
+    -fx-background-color: #0f172a;
+}
+
+.sidebar-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.sidebar .muted-label {
+    -fx-text-fill: #cbd5e1;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e2e8f0;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 14 12 14;
+    -fx-background-radius: 5;
+    -fx-pref-width: 220;
+    -fx-max-width: 220;
+    -fx-min-height: 44;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: rgba(96, 165, 250, 0.18);
+}
+
+.sidebar-button-active {
+    -fx-background-color: #60a5fa !important;
+    -fx-text-fill: white !important;
+}
+
+.sidebar-button-active:hover {
+    -fx-background-color: #3b82f6 !important;
+    -fx-text-fill: white !important;
+}
+
+.sidebar-brand-panel {
+    -fx-background-color: white;
+    -fx-border-color: #dbe2ea;
+    -fx-border-radius: 6;
+    -fx-background-radius: 5;
+    -fx-padding: 12 10 12 10;
+}
+
+.sidebar-brand-panel .sidebar-brand-caption,
+.sidebar-brand-panel .muted-label {
+    -fx-text-fill: #64748b;
+}
+
+.sidebar-brand-caption {
+    -fx-font-size: 11px;
+}
+
+.danger-button {
+    -fx-background-color: #7f1d1d;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-pref-width: 220;
+    -fx-max-width: 220;
+    -fx-min-height: 44;
+}
+
+.sidebar-button-logout {
+    -fx-background-color: #dc2626;
+    -fx-text-fill: white;
+    -fx-alignment: CENTER;
+    -fx-padding: 10 14 10 14;
+    -fx-background-radius: 5;
+    -fx-pref-width: 220;
+    -fx-max-width: 220;
+    -fx-min-height: 38;
+    -fx-font-weight: bold;
+}
+
+.sidebar-button-logout:hover {
+    -fx-background-color: #b91c1c;
+    -fx-text-fill: white;
+}
+
+.sidebar .region {
+    -fx-pref-height: 8;
+}
+
+.topbar {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #e2e8f0 transparent;
+}
+
+.content-wrapper {
+    -fx-background-color: transparent;
+}
+
+.content-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.panel-card,
+.metric-card {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #dbe2ea;
+}
+
+.panel-title,
+.metric-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.metric-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2563eb;
+}
+
+.content-scroll {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.content-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.error-card {
+    -fx-border-color: #fecaca;
+    -fx-background-color: #fff1f2;
+}
+
+.neutral-card {
+    -fx-background-color: #eff6ff;
+    -fx-border-color: #bfdbfe;
+}
+
+.dashboard-spotlight {
+    -fx-background-color: linear-gradient(to bottom right, #1f5ea8, #24579a);
+    -fx-border-color: #2c69b7;
+}
+
+.dashboard-chip {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-background-radius: 999;
+    -fx-padding: 6 14 6 14;
+    -fx-text-fill: white;
+}
+
+.dashboard-spotlight-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.dashboard-spotlight-metric {
+    -fx-font-size: 46px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.dashboard-spotlight .label {
+    -fx-text-fill: white;
+}
+
+.dashboard-spotlight .metric-card {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dashboard-spotlight .metric-title,
+.dashboard-spotlight .metric-value {
+    -fx-text-fill: white;
+}
+
+/* ============================================================
+ * Dashboard nuevo - métricas y layout
+ * ============================================================ */
+
+.dashboard-greeting {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.dashboard-date {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748b;
+    -fx-text-transform: capitalize;
+}
+
+.metric-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.04), 8, 0, 0, 2);
+}
+
+.metric-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 12, 0, 0, 4);
+    -fx-translate-y: -2;
+}
+
+.metric-icon {
+    -fx-font-size: 22px;
+}
+
+.metric-title {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+    -fx-font-weight: 500;
+}
+
+.metric-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+/* Colores por tipo de métrica */
+.metric-pacientes .metric-value {
+    -fx-text-fill: #228767;
+}
+.metric-citas .metric-value {
+    -fx-text-fill: #3b82f6;
+}
+.metric-cobros .metric-value {
+    -fx-text-fill: #f59e0b;
+}
+.metric-profesionales .metric-value {
+    -fx-text-fill: #8b5cf6;
+}
+
+/* Timeline */
+.timeline-primary {
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #1e293b;
+}
+
+.timeline-secondary {
+    -fx-font-size: 11px;
+    -fx-text-fill: #94a3b8;
+}
+
+/* ListView en timeline */
+.list-view .list-cell:filled {
+    -fx-border-color: transparent transparent #f0f3f6 transparent;
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: #f8fafc;
+}

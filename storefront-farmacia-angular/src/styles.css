@@ -1,0 +1,16 @@
+@import './styles/tokens/colors.css';
+@import './styles/tokens/radii.css';
+@import './styles/tokens/shadows.css';
+@import './styles/tokens/spacing.css';
+@import './styles/tokens/typography.css';
+@import './styles/base/reset.css';
+@import './styles/base/base.css';
+@import './styles/base/accessibility.css';
+@import './styles/components/buttons.css';
+@import './styles/components/cards.css';
+@import './styles/components/forms.css';
+@import './styles/components/badges.css';
+@import './styles/components/loaders.css';
+@import './styles/layouts/page.css';
+@import './styles/layouts/catalogo.css';
+@import './styles/layouts/detalle.css';

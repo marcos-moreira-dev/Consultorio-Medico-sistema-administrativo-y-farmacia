@@ -1,0 +1,5 @@
+﻿APP_ENV=local
+API_BASE_URL=http://localhost:8081/api
+REQUEST_TIMEOUT_MS=15000
+REPORTS_DOWNLOAD_DIR=./tmp/reports
+LOCALE=es-EC

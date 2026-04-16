@@ -1,0 +1,183 @@
+/* ============================================================
+ * Badges / Status Indicators - Desktop Consultorio
+ *
+ * Estados de cita, cobro, profesional, severidad
+ * ============================================================ */
+
+/* --- Status Badge Base --- */
+.status-badge {
+    -fx-background-radius: 999;
+    -fx-padding: 4 10 4 10;
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-alignment: center;
+    -fx-min-width: 80;
+}
+
+/* --- Cita States --- */
+.badge-programada {
+    -fx-background-color: #e6f5ef;
+    -fx-text-fill: #1c6b4d;
+}
+
+.badge-atendida {
+    -fx-background-color: #eff6ff;
+    -fx-text-fill: #1d4ed8;
+}
+
+.badge-cancelada {
+    -fx-background-color: #fef2f2;
+    -fx-text-fill: #b34a48;
+}
+
+.badge-en-atencion {
+    -fx-background-color: #f0fdf4;
+    -fx-text-fill: #166534;
+}
+
+/* --- Cobro States --- */
+.badge-pagado {
+    -fx-background-color: #e8faf0;
+    -fx-text-fill: #1c6b4d;
+}
+
+.badge-pendiente {
+    -fx-background-color: #fef3c7;
+    -fx-text-fill: #9a6610;
+}
+
+.badge-anulado {
+    -fx-background-color: #f0f3f6;
+    -fx-text-fill: #6b7f8e;
+}
+
+/* --- Profesional States --- */
+.badge-activo {
+    -fx-background-color: #e8faf0;
+    -fx-text-fill: #1c6b4d;
+}
+
+.badge-inactivo {
+    -fx-background-color: #f0f3f6;
+    -fx-text-fill: #6b7f8e;
+}
+
+/* --- Usuario States --- */
+.badge-online {
+    -fx-background-color: #e8faf0;
+    -fx-text-fill: #1c6b4d;
+}
+
+.badge-offline {
+    -fx-background-color: #f0f3f6;
+    -fx-text-fill: #6b7f8e;
+}
+
+/* --- Severity Badge (Auditoría) --- */
+.severity-alta {
+    -fx-background-color: #fef2f2;
+    -fx-text-fill: #ef4444;
+    -fx-font-weight: bold;
+}
+
+.severity-media {
+    -fx-background-color: #fef3c7;
+    -fx-text-fill: #9a6610;
+}
+
+.severity-baja {
+    -fx-background-color: #e8faf0;
+    -fx-text-fill: #1c6b4d;
+}
+
+/* --- Disponibilidad de slot (Citas) --- */
+.slot-programada {
+    -fx-background-color: #e6f5ef;
+    -fx-border-color: #228767;
+    -fx-border-width: 0 0 0 3;
+}
+
+.slot-atendida {
+    -fx-background-color: #eff6ff;
+    -fx-border-color: #3b82f6;
+    -fx-border-width: 0 0 0 3;
+}
+
+.slot-cancelada {
+    -fx-background-color: #fef2f2;
+    -fx-border-color: #ef4444;
+    -fx-border-width: 0 0 0 3;
+    -fx-opacity: 0.7;
+}
+
+.slot-disponible {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #cbd5e1;
+    -fx-border-width: 0 0 0 3;
+}
+
+.slot-en-atencion {
+    -fx-background-color: #fffbeb;
+    -fx-border-color: #f59e0b;
+    -fx-border-width: 0 0 0 3;
+}
+
+/* --- Slot Content Styling --- */
+.slot-time {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.slot-patient {
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+}
+
+.slot-professional {
+    -fx-font-size: 11px;
+    -fx-text-fill: #6b7f8e;
+}
+
+/* --- Calendar Cell States --- */
+.cal-day {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1a2a36;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-padding: 6;
+    -fx-cursor: hand;
+}
+
+.cal-day:hover {
+    -fx-background-color: #e6f5ef;
+}
+
+.cal-day.selected {
+    -fx-background-color: #228767;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.cal-day.today {
+    -fx-border-color: #228767;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+}
+
+.cal-day.has-citas {
+    -fx-background-color: #eff6ff;
+    -fx-border-color: #60a5fa;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1d4ed8;
+}
+
+.cal-day.disabled {
+    -fx-text-fill: #cbd5e1;
+    -fx-cursor: default;
+}
+
+.cal-day.other-month {
+    -fx-text-fill: #cbd5e1;
+}

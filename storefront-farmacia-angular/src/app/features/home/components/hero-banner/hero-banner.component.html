@@ -1,0 +1,53 @@
+<section class="hero-banner page-shell">
+  <div class="hero-banner__hero-card">
+    <div class="hero-banner__hero-copy">
+      <span class="hero-banner__eyebrow">Catálogo público de farmacia</span>
+      <h1>Explora productos visibles con una navegación clara y sin fricción.</h1>
+      <p>
+        Revisa categorías, consulta disponibilidad pública y entra al detalle de cada producto
+        desde una vitrina clara, pensada primero para entender rápido.
+      </p>
+
+      <div class="hero-banner__actions">
+        <a class="button button--primary" routerLink="/catalogo">Ver catálogo</a>
+        <a class="button button--ghost" [routerLink]="['/catalogo']" [queryParams]="{ sortBy: 'nombreProducto' }">
+          Explorar por nombre
+        </a>
+      </div>
+    </div>
+
+    <aside class="hero-banner__brand-showcase" aria-label="Marca de la farmacia">
+      <img class="hero-banner__brand-logo" src="/branding/marks/logo-farmacia-icono.png" alt="Ícono de La Alameda Farma" />
+      <div class="hero-banner__brand-copy">
+        <strong>La Alameda Farma</strong>
+        <span>Catálogo claro para encontrar productos y disponibilidad.</span>
+      </div>
+    </aside>
+  </div>
+
+  <section class="hero-banner__quick-panel" aria-label="Consulta rápida de la farmacia">
+    <article class="hero-banner__intro">
+      <strong>Consulta rápida</strong>
+      <span>Productos, categorías y detalle público en una sola superficie.</span>
+    </article>
+
+    <div class="hero-banner__metrics">
+      <article>
+        <span>Categorías visibles</span>
+        <strong>{{ categoryCount || '—' }}</strong>
+      </article>
+      <article>
+        <span>Productos visibles</span>
+        <strong>{{ visibleProductCount || '—' }}</strong>
+      </article>
+      <article>
+        <span>Categoría destacada</span>
+        <strong>{{ topCategoryName }}</strong>
+      </article>
+      <article>
+        <span>Uso principal</span>
+        <strong>Consulta desde móvil o escritorio</strong>
+      </article>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+set -eu
+
+if command -v mvn >/dev/null 2>&1; then
+  exec mvn "$@"
+fi
+
+for candidate in "$MAVEN_HOME/bin/mvn" "$M2_HOME/bin/mvn" /c/apache-maven-3.9.14/bin/mvn; do
+  if [ -n "${candidate:-}" ] && [ -x "$candidate" ]; then
+    exec "$candidate" "$@"
+  fi
+done
+
+echo "[backend-consultorio] No se encontró Maven en PATH ni en rutas conocidas." >&2
+exit 1

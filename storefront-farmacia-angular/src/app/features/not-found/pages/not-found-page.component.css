@@ -1,0 +1,39 @@
+.not-found-page {
+  padding-block: var(--space-48);
+}
+
+.not-found-page__card {
+  max-width: 36rem;
+  margin-inline: auto;
+  padding: var(--space-32);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  gap: var(--space-12);
+  text-align: center;
+}
+
+.not-found-page__code {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--color-primary-strong);
+}
+
+.not-found-page__card h1,
+.not-found-page__card p {
+  margin: 0;
+}
+
+.not-found-page__card p {
+  color: var(--color-text-secondary);
+}
+
+.not-found-page__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  margin-top: var(--space-8);
+}

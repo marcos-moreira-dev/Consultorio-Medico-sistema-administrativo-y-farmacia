@@ -1,0 +1,35 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
+  gap: var(--space-20);
+}
+
+/**
+ * Fade-in escalonado para las cards del grid.
+ * Cada card aparece con un ligero delay para crear un efecto
+ * de cascada visual que mejora la percepción de fluidez.
+ */
+.product-grid app-product-card {
+  animation: product-card-fade-in 0.35s ease-out both;
+}
+
+.product-grid app-product-card:nth-child(1) { animation-delay: 0.02s; }
+.product-grid app-product-card:nth-child(2) { animation-delay: 0.04s; }
+.product-grid app-product-card:nth-child(3) { animation-delay: 0.06s; }
+.product-grid app-product-card:nth-child(4) { animation-delay: 0.08s; }
+.product-grid app-product-card:nth-child(5) { animation-delay: 0.10s; }
+.product-grid app-product-card:nth-child(6) { animation-delay: 0.12s; }
+.product-grid app-product-card:nth-child(7) { animation-delay: 0.14s; }
+.product-grid app-product-card:nth-child(8) { animation-delay: 0.16s; }
+.product-grid app-product-card:nth-child(n+9) { animation-delay: 0.18s; }
+
+@keyframes product-card-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

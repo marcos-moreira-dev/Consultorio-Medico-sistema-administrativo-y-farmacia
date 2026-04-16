@@ -1,0 +1,72 @@
+﻿<section class="page-shell catalog-page">
+  <app-breadcrumbs [items]="breadcrumbs"></app-breadcrumbs>
+
+  <app-section-header
+    title="Catálogo público"
+    subtitle="Explora productos visibles, filtra por categoría y entra al detalle sin romper la navegación."
+  ></app-section-header>
+
+  <app-catalog-toolbar
+    [categories]="categories"
+    [query]="filters"
+    (filtersChange)="applyFilters($event)"
+    (clearFilters)="clearFilters()"
+  ></app-catalog-toolbar>
+
+  <div class="catalog-page__summary" *ngIf="pageData && !loading" aria-live="polite">
+    <div class="catalog-page__summary-copy">
+      <strong>
+        {{ pageData.meta.totalItems }} resultado{{ pageData.meta.totalItems === 1 ? '' : 's' }}
+      </strong>
+      <span>{{ resultRangeLabel() }}</span>
+    </div>
+
+    <div class="catalog-page__chips" *ngIf="hasActiveFilters()">
+      <button
+        class="catalog-page__chip"
+        type="button"
+        *ngFor="let chip of activeFilterSummary(); trackBy: trackByChip"
+        (click)="clearFilterChip(chip)"
+        [attr.aria-label]="'Quitar filtro ' + chip.label"
+      >
+        <span>{{ chip.label }}</span>
+        <span aria-hidden="true">×</span>
+      </button>
+      <button class="catalog-page__clear-inline" type="button" (click)="clearFilters()">
+        Limpiar filtros
+      </button>
+    </div>
+  </div>
+
+  <app-catalog-empty-state
+    *ngIf="!loading && errorMessage"
+    title="No se pudo cargar el catálogo"
+    [message]="errorMessage"
+  ></app-catalog-empty-state>
+
+  <div class="catalog-page__actions" *ngIf="!loading && errorMessage" role="alert" aria-live="assertive">
+    <button class="button button--ghost" type="button" (click)="retryCatalog()">
+      Reintentar carga
+    </button>
+  </div>
+
+  <app-product-grid
+    *ngIf="loading || (pageData && pageData.items.length > 0)"
+    [items]="pageData?.items ?? []"
+    [loading]="loading"
+    [skeletonCount]="8"
+  ></app-product-grid>
+
+  <app-catalog-empty-state
+    *ngIf="!loading && !errorMessage && pageData && pageData.items.length === 0"
+  ></app-catalog-empty-state>
+
+  <app-pagination
+    *ngIf="pageData && pageData.meta.totalPages > 1"
+    [page]="pageData.meta.page"
+    [totalPages]="pageData.meta.totalPages"
+    [hasPreviousPage]="pageData.meta.hasPreviousPage"
+    [hasNextPage]="pageData.meta.hasNextPage"
+    (pageChange)="goToPage($event)"
+  ></app-pagination>
+</section>

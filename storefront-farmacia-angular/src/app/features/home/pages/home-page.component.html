@@ -1,0 +1,60 @@
+<section class="page-shell page-section page-section--compact">
+  <app-breadcrumbs [items]="breadcrumbs"></app-breadcrumbs>
+</section>
+
+<app-hero-banner
+  [categoryCount]="categoryCount"
+  [visibleProductCount]="visibleProductCount"
+  [topCategoryName]="topCategoryName"
+></app-hero-banner>
+
+
+
+<section class="page-shell page-section">
+  <app-section-header
+    title="Categorías visibles"
+    subtitle="Entradas rápidas al catálogo público para empezar a explorar sin perderte."
+  ></app-section-header>
+
+  <app-featured-categories
+    *ngIf="categories.length > 0"
+    [categories]="categories"
+  ></app-featured-categories>
+
+  <app-catalog-empty-state
+    *ngIf="!loading && !errorMessage && categories.length === 0"
+    title="Todavía no hay categorías visibles"
+    message="Cuando haya más productos visibles, aquí aparecerán accesos rápidos al catálogo."
+  ></app-catalog-empty-state>
+
+  <app-catalog-empty-state
+    *ngIf="!loading && errorMessage"
+    title="No se pudo cargar la home"
+    [message]="errorMessage"
+  ></app-catalog-empty-state>
+
+  <div class="page-section__actions" *ngIf="!loading && errorMessage" role="alert" aria-live="assertive">
+    <button class="button button--ghost" type="button" (click)="retryLoad()">
+      Reintentar carga
+    </button>
+  </div>
+</section>
+
+<section class="page-shell page-section">
+  <app-section-header
+    title="Productos visibles ahora"
+    subtitle="Una muestra inicial para entrar al detalle sin recorrer todo el catálogo."
+  ></app-section-header>
+
+  <app-product-grid [items]="featuredProducts" [loading]="loading" [skeletonCount]="6"></app-product-grid>
+
+  <app-catalog-empty-state
+    *ngIf="!loading && !errorMessage && featuredProducts.length === 0"
+    title="Aún no hay productos visibles"
+    message="Todavía no hay productos visibles para mostrar en esta sección."
+  ></app-catalog-empty-state>
+
+  <div class="page-section__footer" *ngIf="!loading && featuredProducts.length > 0">
+    <a class="button button--ghost" routerLink="/catalogo">Ir al catálogo completo</a>
+  </div>
+</section>

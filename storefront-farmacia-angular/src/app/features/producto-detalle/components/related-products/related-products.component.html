@@ -1,0 +1,6 @@
+<div class="related-products" *ngIf="items.length > 0">
+  <app-product-card
+    *ngFor="let item of items; trackBy: trackByProductId"
+    [product]="item"
+  ></app-product-card>
+</div>

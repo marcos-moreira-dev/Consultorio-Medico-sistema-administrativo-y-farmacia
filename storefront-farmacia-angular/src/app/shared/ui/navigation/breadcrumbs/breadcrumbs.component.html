@@ -1,0 +1,19 @@
+<nav class="breadcrumbs" aria-label="Navegación secundaria" *ngIf="items.length > 0">
+  <ol class="breadcrumbs__list">
+    <li class="breadcrumbs__item" *ngFor="let item of items; let last = last; trackBy: trackByIndex">
+      <ng-container *ngIf="item.routerLink && !item.current; else breadcrumbLabel">
+        <a class="breadcrumbs__link" [routerLink]="item.routerLink" [queryParams]="item.queryParams">
+          {{ item.label }}
+        </a>
+      </ng-container>
+
+      <ng-template #breadcrumbLabel>
+        <span class="breadcrumbs__label" [attr.aria-current]="last || item.current ? 'page' : null">
+          {{ item.label }}
+        </span>
+      </ng-template>
+
+      <span class="breadcrumbs__separator" aria-hidden="true" *ngIf="!last">/</span>
+    </li>
+  </ol>
+</nav>

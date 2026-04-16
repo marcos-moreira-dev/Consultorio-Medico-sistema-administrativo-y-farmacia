@@ -1,0 +1,47 @@
+<header class="navbar">
+  <div class="page-shell navbar__inner">
+    <a class="navbar__brand" routerLink="/" aria-label="Ir a la página principal" (click)="closeMenu()">
+      <img class="navbar__logo" src="/branding/marks/logo-farmacia-icono.png" alt="Ícono de La Alameda Farma" />
+      <span class="navbar__brand-copy">
+        <strong>La Alameda Farma</strong>
+        <small>Catálogo público y acceso demo admin</small>
+      </span>
+    </a>
+
+    <button
+      class="navbar__toggle"
+      type="button"
+      [attr.aria-expanded]="menuOpen"
+      aria-controls="navbar-panel"
+      aria-label="Abrir navegación"
+      (click)="toggleMenu()"
+    >
+      <span aria-hidden="true">☰</span>
+      <span>Menú</span>
+    </button>
+
+    <div class="navbar__panel" id="navbar-panel" [class.is-open]="menuOpen">
+      <nav class="navbar__nav" aria-label="Navegación principal">
+        <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Inicio</a>
+        <a routerLink="/catalogo" routerLinkActive="is-active" (click)="closeMenu()">Catálogo</a>
+        <a routerLink="/admin" routerLinkActive="is-active" (click)="closeMenu()">Admin</a>
+      </nav>
+
+      <form class="navbar__search" role="search" (ngSubmit)="onSubmit()">
+        <input
+          type="search"
+          name="q"
+          [(ngModel)]="searchTerm"
+          (ngModelChange)="onSearchInput()"
+          placeholder="Buscar productos"
+          aria-label="Buscar productos"
+        />
+        <button class="button button--primary" type="submit" [class.is-searching]="isSearching">
+          <span class="navbar__search-text" *ngIf="!isSearching">Buscar</span>
+          <span class="navbar__search-spinner" *ngIf="isSearching" aria-hidden="true">…</span>
+          <span class="sr-only" *ngIf="isSearching">Buscando…</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</header>

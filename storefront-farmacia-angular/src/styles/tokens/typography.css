@@ -1,0 +1,10 @@
+:root {
+  --font-family-base: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-size-xs: 0.78rem;
+  --font-size-sm: 0.92rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.45rem;
+  --font-size-hero: clamp(2rem, 4vw, 3.3rem);
+  --line-height-base: 1.55;
+}

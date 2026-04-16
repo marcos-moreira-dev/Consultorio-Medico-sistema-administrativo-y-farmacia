@@ -1,0 +1,69 @@
+<section class="page-shell product-detail-page">
+  <app-breadcrumbs [items]="breadcrumbs"></app-breadcrumbs>
+
+  <a
+    class="product-detail-page__back-link"
+    [routerLink]="catalogLink.routerLink"
+    [queryParams]="catalogLink.queryParams"
+  >
+    ← Volver al catálogo
+  </a>
+
+  <app-catalog-empty-state
+    *ngIf="!loading && errorMessage"
+    title="No se pudo cargar el detalle"
+    [message]="errorMessage"
+  ></app-catalog-empty-state>
+
+  <div class="product-detail-page__actions" *ngIf="!loading && errorMessage" role="alert" aria-live="assertive">
+    <button class="button button--ghost" type="button" (click)="retryLoad()">
+      Reintentar carga
+    </button>
+  </div>
+
+  <div class="product-detail-page__content product-detail-page__content--loading" *ngIf="loading">
+    <app-product-skeleton></app-product-skeleton>
+    <app-product-skeleton></app-product-skeleton>
+  </div>
+
+  <div class="product-detail-page__content" *ngIf="product && !loading">
+    <app-product-gallery
+      [imageSrc]="product.imagenSrc"
+      [alt]="product.nombreProducto"
+    ></app-product-gallery>
+
+    <app-product-info
+      [product]="product"
+      [catalogRouterLink]="catalogLink.routerLink"
+      [catalogQueryParams]="catalogLink.queryParams"
+    ></app-product-info>
+  </div>
+
+  <section
+    class="product-detail-page__related" aria-live="polite"
+    *ngIf="product && (relatedProductsLoading || relatedProducts.length > 0)"
+  >
+    <app-section-header
+      title="Productos relacionados"
+      subtitle="Otras opciones visibles dentro de la misma categoría pública."
+    ></app-section-header>
+
+    <app-product-grid
+      *ngIf="relatedProductsLoading"
+      [items]="[]"
+      [loading]="true"
+      [skeletonCount]="4"
+    ></app-product-grid>
+
+    <app-related-products
+      *ngIf="!relatedProductsLoading && relatedProducts.length > 0"
+      [items]="relatedProducts"
+    ></app-related-products>
+  </section>
+
+  <app-catalog-empty-state
+    *ngIf="product && !relatedProductsLoading && relatedProducts.length === 0"
+    title="No encontramos más productos relacionados"
+    message="Puedes volver al catálogo o explorar la categoría pública completa desde el detalle."
+  ></app-catalog-empty-state>
+</section>

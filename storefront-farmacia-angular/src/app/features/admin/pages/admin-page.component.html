@@ -1,0 +1,168 @@
+<section class="page-shell admin-page">
+  <header class="admin-page__header">
+    <div>
+      <span class="admin-page__eyebrow">Superficie administrativa</span>
+      <h1>Admin farmacia</h1>
+      <p>Acceso administrativo para gestionar productos, categorías y disponibilidad de la farmacia.</p>
+    </div>
+  </header>
+
+  <div class="admin-page__login-shell" *ngIf="!currentAdmin; else adminAuthenticated">
+    <article class="admin-page__card admin-page__card--login">
+      <h2>Ingreso al panel</h2>
+      <p>Ingresa para organizar productos, ajustar presentaciones y mantener al día el catálogo de la farmacia.</p>
+
+      <label>
+        <span>Usuario</span>
+        <input type="text" [(ngModel)]="username" />
+      </label>
+
+      <label>
+        <span>Contraseña</span>
+        <input type="password" [(ngModel)]="password" />
+      </label>
+
+      <div class="admin-page__actions admin-page__actions--login">
+        <button class="button button--primary" type="button" (click)="onLogin()" [disabled]="loading">Entrar como admin</button>
+      </div>
+
+      <p class="admin-page__message" *ngIf="statusMessage">{{ statusMessage }}</p>
+
+      <div class="admin-page__demo-box">
+        <strong>Credenciales de acceso</strong>
+        <span>Usuario: admin.farmacia</span>
+        <span>Clave: Admin123*</span>
+      </div>
+    </article>
+  </div>
+
+  <ng-template #adminAuthenticated>
+    <section class="admin-page__authenticated-shell">
+      <article class="admin-page__card admin-page__card--session admin-page__card--session-bar">
+        <div class="admin-page__session-copy">
+          <h2>Sesión administrativa</h2>
+          <p>Revisa el catálogo, organiza productos y actualiza la información visible de la farmacia.</p>
+        </div>
+
+        <div class="admin-page__profile admin-page__profile--inline">
+          <p><strong>Usuario:</strong> {{ currentAdmin?.username || '—' }}</p>
+          <p><strong>Correo:</strong> {{ currentAdmin?.email || '—' }}</p>
+          <p><strong>Rol:</strong> {{ currentAdmin?.rolPrincipal || '—' }}</p>
+          <p><strong>Modo:</strong>
+            <span class="admin-page__mode-badge" [class.demo]="demoSession" [class.backend]="!demoSession">
+              {{ demoSession ? '⚪ Demo local' : '🟢 Backend real' }}
+            </span>
+          </p>
+        </div>
+
+        <div class="admin-page__actions admin-page__actions--session-bar">
+          <button class="button button--primary" type="button" (click)="onLogout()">Cerrar sesión</button>
+        </div>
+      </article>
+
+      <div class="admin-page__content-stack">
+        <article class="admin-page__card admin-page__card--table">
+          <div class="admin-page__table-header">
+            <div>
+              <h2>Panel administrativo</h2>
+              <p class="admin-page__demo-note">Revisa productos, presentaciones y estado de disponibilidad del catálogo.</p>
+            </div>
+            <div class="admin-page__metrics">
+              <div>
+                <span>Categorías</span>
+                <strong>{{ totalCategorias ?? '—' }}</strong>
+              </div>
+              <div>
+                <span>Productos</span>
+                <strong>{{ totalProductos ?? '—' }}</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-page__table-wrap">
+            <table class="admin-page__table" *ngIf="adminProducts.length > 0; else adminNoProducts">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Categoría</th>
+                  <th>Presentación</th>
+                  <th>Descripción breve</th>
+                  <th>Precio</th>
+                  <th>Disponibilidad</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of adminProducts">
+                  <td>{{ product.nombreProducto }}</td>
+                  <td>{{ product.nombreCategoria || '—' }}</td>
+                  <td>{{ product.presentacion }}</td>
+                  <td class="admin-page__description-cell">{{ product.descripcionBreve || '—' }}</td>
+                  <td>{{ product.precioVisible ?? '—' }}</td>
+                  <td>{{ product.estadoDisponibilidad || product.estadoProducto || '—' }}</td>
+                  <td>
+                    <div class="admin-page__row-actions">
+                      <button class="button button--ghost button--small" type="button" (click)="onEditProduct(product)">Editar</button>
+                      <button class="button button--ghost button--small" type="button" (click)="onToggleProduct(product)">
+                        {{ product.estadoProducto === 'INACTIVO' ? 'Reactivar' : 'Inactivar' }}
+                      </button>
+                      <button class="button button--ghost button--small" type="button" (click)="onDeleteProduct(product)" *ngIf="demoSession">Quitar</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <ng-template #adminNoProducts>
+              <p class="admin-page__message">Todavía no hay productos administrativos para mostrar en esta vista.</p>
+            </ng-template>
+          </div>
+        </article>
+
+        <article class="admin-page__card admin-page__card--editor">
+          <div class="admin-page__editor-header">
+            <div>
+              <h2>{{ editingProductId ? 'Editar producto' : 'Agregar producto' }}</h2>
+              <p class="admin-page__demo-note">Completa los datos del producto y guarda los cambios desde esta misma pantalla.</p>
+            </div>
+          </div>
+
+          <div class="admin-page__editor-grid">
+            <label>
+              <span>Categoría</span>
+              <select [(ngModel)]="productForm.categoriaId">
+                <option *ngFor="let category of categoryOptions" [ngValue]="category.categoriaId">{{ category.nombreCategoria }}</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Precio visible</span>
+              <input type="number" min="0" step="0.1" [(ngModel)]="productForm.precioVisible" />
+            </label>
+
+            <label>
+              <span>Nombre del producto</span>
+              <input type="text" [(ngModel)]="productForm.nombreProducto" />
+            </label>
+
+            <label>
+              <span>Presentación</span>
+              <input type="text" [(ngModel)]="productForm.presentacion" />
+            </label>
+
+            <label class="admin-page__editor-field--full">
+              <span>Descripción breve</span>
+              <textarea rows="3" [(ngModel)]="productForm.descripcionBreve" class="admin-page__textarea-fixed"></textarea>
+            </label>
+          </div>
+
+          <div class="admin-page__actions">
+            <button class="button button--primary" type="button" (click)="onSubmitProduct()" [disabled]="loading">
+              {{ editingProductId ? 'Guardar cambios' : 'Agregar producto' }}
+            </button>
+            <button class="button button--ghost" type="button" (click)="onCancelEdit()" *ngIf="editingProductId">Cancelar edición</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </ng-template>
+</section>

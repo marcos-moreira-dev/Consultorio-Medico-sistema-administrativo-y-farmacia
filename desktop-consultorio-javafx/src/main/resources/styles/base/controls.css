@@ -1,0 +1,200 @@
+/* ============================================================
+ * Controles JavaFX - Desktop Consultorio
+ *
+ * Overrides para controles nativos: ComboBox, DatePicker,
+ * Spinner, CheckBox, ProgressBar
+ * ============================================================ */
+
+/* --- ComboBox --- */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #d5dce3;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 12 10 12;
+    -fx-font-size: 14px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #228767;
+    -fx-effect: dropshadow(gaussian, rgba(34,135,103,0.15), 8, 0, 0, 0);
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #6b7f8e;
+}
+
+.combo-box .list-view {
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8;
+}
+
+.combo-box .list-cell {
+    -fx-padding: 10 12 10 12;
+    -fx-background-color: white;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: #f0f3f6;
+}
+
+.combo-box .list-cell:selected {
+    -fx-background-color: #e6f5ef;
+    -fx-text-fill: #228767;
+    -fx-font-weight: 600;
+}
+
+.combo-box-popup .list-view {
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8;
+}
+
+/* --- DatePicker --- */
+.date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #d5dce3;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 12 10 12;
+}
+
+.date-picker:focused {
+    -fx-border-color: #228767;
+    -fx-effect: dropshadow(gaussian, rgba(34,135,103,0.15), 8, 0, 0, 0);
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.date-picker .arrow {
+    -fx-background-color: #6b7f8e;
+}
+
+/* --- Calendar Popup --- */
+.date-picker-popup {
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.date-picker-popup .month-view {
+    -fx-background-color: white;
+}
+
+.date-picker-popup .month-cell {
+    -fx-background-color: white;
+}
+
+.date-picker-popup .month-cell:hover {
+    -fx-background-color: #e6f5ef;
+}
+
+.date-picker-popup .month-cell:selected {
+    -fx-background-color: #228767;
+    -fx-text-fill: white;
+}
+
+.date-picker-popup .today {
+    -fx-border-color: #228767;
+    -fx-border-width: 1;
+}
+
+.date-picker-popup .previous-month,
+.date-picker-popup .next-month {
+    -fx-text-fill: #cbd5e1;
+}
+
+/* --- Spinner --- */
+.spinner {
+    -fx-background-color: white;
+    -fx-border-color: #d5dce3;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.spinner:focused {
+    -fx-border-color: #228767;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-color: #f0f3f6;
+    -fx-border-color: #d5dce3;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: #e2e8f0;
+}
+
+/* --- CheckBox --- */
+.check-box .box {
+    -fx-border-color: #d5dce3;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-padding: 2;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #228767;
+    -fx-border-color: #228767;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+.check-box:indeterminate .box {
+    -fx-background-color: #f59e0b;
+    -fx-border-color: #f59e0b;
+}
+
+/* --- RadioButton --- */
+.radio-button .radio {
+    -fx-border-color: #d5dce3;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+}
+
+.radio-button:selected .radio {
+    -fx-border-color: #228767;
+}
+
+.radio-button .dot {
+    -fx-background-color: #228767;
+    -fx-background-radius: 999;
+}
+
+/* --- Progress Bar --- */
+.progress-bar .track {
+    -fx-background-color: #e2e8f0;
+    -fx-background-radius: 4;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #228767;
+    -fx-background-radius: 4;
+}
+
+/* --- Progress Indicator --- */
+.progress-indicator {
+    -fx-progress-color: #228767;
+}
+
+.progress-indicator .percentage {
+    -fx-fill: #6b7f8e;
+}
+
+/* --- Tooltip --- */
+.tooltip {
+    -fx-background-color: #1e293b;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10 6 10;
+}

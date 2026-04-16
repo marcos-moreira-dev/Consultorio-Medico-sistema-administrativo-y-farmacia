@@ -1,0 +1,107 @@
+/* ============================================================
+ * Feedback Components - Desktop Consultorio
+ *
+ * Toast notifications, loading indicators, empty states
+ * ============================================================ */
+
+/* --- Toast Notification --- */
+.toast-notification {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 12 16 12 16;
+}
+
+.toast-success {
+    -fx-background-color: #dcfce7;
+    -fx-border-color: #16a34a;
+}
+
+.toast-error {
+    -fx-background-color: #fef2f2;
+    -fx-border-color: #dc2626;
+}
+
+.toast-info {
+    -fx-background-color: #eff6ff;
+    -fx-border-color: #2563eb;
+}
+
+.toast-warning {
+    -fx-background-color: #fffbeb;
+    -fx-border-color: #d97706;
+}
+
+.toast-icon {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.toast-icon-success {
+    -fx-text-fill: #16a34a;
+}
+.toast-icon-error {
+    -fx-text-fill: #dc2626;
+}
+.toast-icon-info {
+    -fx-text-fill: #2563eb;
+}
+.toast-icon-warning {
+    -fx-text-fill: #d97706;
+}
+
+.toast-message {
+    -fx-font-size: 13px;
+}
+
+.toast-message-success {
+    -fx-text-fill: #16a34a;
+}
+.toast-message-error {
+    -fx-text-fill: #dc2626;
+}
+.toast-message-info {
+    -fx-text-fill: #2563eb;
+}
+.toast-message-warning {
+    -fx-text-fill: #d97706;
+}
+
+/* --- Loading Indicator --- */
+.loading-indicator {
+    -fx-alignment: center;
+    -fx-spacing: 12;
+}
+
+.loading-spinner {
+    -fx-font-size: 24px;
+    -fx-text-fill: #3b82f6;
+}
+
+.loading-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+}
+
+/* --- Empty State --- */
+.empty-state {
+    -fx-alignment: center;
+    -fx-spacing: 12;
+    -fx-padding: 40 20 40 20;
+}
+
+.empty-state-icon {
+    -fx-font-size: 48px;
+    -fx-text-fill: #cbd5e1;
+}
+
+.empty-state-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64748b;
+}
+
+.empty-state-message {
+    -fx-font-size: 13px;
+    -fx-text-fill: #94a3b8;
+}

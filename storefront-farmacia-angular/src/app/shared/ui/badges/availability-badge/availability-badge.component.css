@@ -1,0 +1,29 @@
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding-inline: var(--space-12);
+  border-radius: 999px;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.availability-badge--success {
+  background: var(--color-success-soft);
+  color: var(--color-success-text);
+  border-color: rgba(28, 131, 95, 0.16);
+}
+
+.availability-badge--warning {
+  background: var(--color-warning-soft);
+  color: var(--color-warning-text);
+  border-color: rgba(163, 105, 12, 0.16);
+}
+
+.availability-badge--muted {
+  background: var(--color-surface-subtle);
+  color: var(--color-text-muted);
+  border-color: var(--color-border-soft);
+}

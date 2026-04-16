@@ -1,0 +1,183 @@
+/* ============================================================
+ * Módulo Genérico - Desktop Consultorio
+ *
+ * PageHeader, PageToolbar, Breadcrumb, Separator, EmptyState, Wizard
+ * ============================================================ */
+
+/* --- Page Header --- */
+.page-header {
+    -fx-spacing: 4;
+    -fx-padding: 0 0 16 0;
+}
+
+.page-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.page-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6b7f8e;
+}
+
+/* --- Page Toolbar --- */
+.page-toolbar {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10;
+    -fx-padding: 12 16 12 16;
+    -fx-spacing: 12;
+    -fx-alignment: center-left;
+}
+
+.filter-bar {
+    -fx-spacing: 10;
+    -fx-alignment: center-left;
+}
+
+.action-bar {
+    -fx-spacing: 10;
+    -fx-alignment: center-right;
+}
+
+/* --- Breadcrumb --- */
+.breadcrumb {
+    -fx-spacing: 8;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 12 0;
+}
+
+.breadcrumb-item {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7f8e;
+}
+
+.breadcrumb-item.current {
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.breadcrumb-separator {
+    -fx-font-size: 12px;
+    -fx-text-fill: #cbd5e1;
+}
+
+.breadcrumb-link {
+    -fx-font-size: 12px;
+    -fx-text-fill: #228767;
+    -fx-cursor: hand;
+}
+
+.breadcrumb-link:hover {
+    -fx-underline: true;
+}
+
+/* --- Separator --- */
+.separator-line {
+    -fx-border-color: #e2e8f0 transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 12 0 12 0;
+}
+
+.separator-line.vertical {
+    -fx-border-color: transparent transparent transparent #e2e8f0;
+    -fx-border-width: 0 0 0 1;
+    -fx-padding: 0 12 0 12;
+}
+
+/* --- Empty State --- */
+.empty-state {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 10;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 40;
+    -fx-alignment: center;
+    -fx-spacing: 16;
+}
+
+.empty-state-icon {
+    -fx-font-size: 48px;
+    -fx-opacity: 0.5;
+}
+
+.empty-state-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3d5260;
+}
+
+.empty-state-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6b7f8e;
+    -fx-wrap-text: true;
+    -fx-max-width: 300;
+}
+
+/* --- Wizard --- */
+.wizard {
+    -fx-spacing: 24;
+}
+
+.wizard-steps {
+    -fx-spacing: 0;
+    -fx-alignment: center-left;
+}
+
+.wizard-step {
+    -fx-padding: 12 24 12 24;
+    -fx-alignment: center;
+    -fx-background-color: #f0f3f6;
+}
+
+.wizard-step:active {
+    -fx-background-color: #228767;
+}
+
+.wizard-step:active .wizard-step-number,
+.wizard-step:active .wizard-step-label {
+    -fx-text-fill: white;
+}
+
+.wizard-step:completed {
+    -fx-background-color: #e6f5ef;
+}
+
+.wizard-step-number {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6b7f8e;
+}
+
+.wizard-step-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7f8e;
+}
+
+.wizard-content {
+    -fx-spacing: 16;
+}
+
+.wizard-actions {
+    -fx-spacing: 12;
+    -fx-alignment: center-right;
+    -fx-padding: 16 0 0 0;
+    -fx-border-color: #f0f3f6 transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* --- Content Wrapper --- */
+.content-wrapper {
+    -fx-spacing: 16;
+    -fx-padding: 18 20 18 20;
+}
+
+/* --- Grid Container --- */
+.grid-container {
+    -fx-hgap: 16;
+    -fx-vgap: 16;
+    -fx-padding: 0;
+}

@@ -1,0 +1,4 @@
+.catalog-grid-layout {
+  display: grid;
+  gap: var(--space-20);
+}

@@ -1,0 +1,43 @@
+﻿# =========================
+# Sistema operativo / editor
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.tmp
+*.log
+
+# =========================
+# Java / Maven
+# =========================
+**/target/
+
+# =========================
+# Node / Angular / Nest
+# =========================
+**/node_modules/
+**/dist/
+**/.angular/
+**/.cache/
+
+# =========================
+# Variables de entorno
+# =========================
+**/.env
+**/.env.local
+**/.env.*.local
+!**/.env.example
+
+# =========================
+# Exportaciones / backups
+# =========================
+*.dump
+*.backup
+*.sql.bak
+
+# =========================
+# Diagnostico local
+# =========================
+.diagnostics/

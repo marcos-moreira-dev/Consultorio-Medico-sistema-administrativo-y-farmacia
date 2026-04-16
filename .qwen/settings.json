@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(C:\\Users\\MARCOS MOREIRA\\Downloads/**)",
+      "Read(C:\\Users/**)"
+    ]
+  },
+  "$version": 3
+}

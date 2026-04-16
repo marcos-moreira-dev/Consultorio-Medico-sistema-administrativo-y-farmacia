@@ -1,0 +1,44 @@
+<article class="product-card">
+  <a class="product-card__media" [routerLink]="['/producto', product.productoId]">
+    <img
+      [src]="product.imagenSrc"
+      [alt]="product.nombreProducto"
+      appImageFallback
+      loading="lazy"
+    />
+  </a>
+
+  <div class="product-card__body">
+    <div class="product-card__meta">
+      <a
+        *ngIf="product.nombreCategoria"
+        class="product-card__category"
+        [routerLink]="['/catalogo']"
+        [queryParams]="{ categoriaId: product.categoriaId }"
+      >
+        {{ product.nombreCategoria }}
+      </a>
+      <app-availability-badge
+        [estado]="product.estadoDisponibilidad"
+        [disponible]="product.disponible"
+      ></app-availability-badge>
+    </div>
+
+    <a class="product-card__title" [routerLink]="['/producto', product.productoId]">
+      {{ product.nombreProducto }}
+    </a>
+
+    <p class="product-card__presentation">{{ product.presentacion }}</p>
+
+    <p *ngIf="product.descripcionBreve" class="product-card__description">
+      {{ product.descripcionBreve }}
+    </p>
+
+    <div class="product-card__footer">
+      <strong class="product-card__price">{{ product.precioVisible | money }}</strong>
+      <a class="button button--ghost" [routerLink]="['/producto', product.productoId]">
+        Ver detalle
+      </a>
+    </div>
+  </div>
+</article>

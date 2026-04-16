@@ -1,0 +1,55 @@
+<form class="catalog-toolbar" (ngSubmit)="submit()">
+  <div class="catalog-toolbar__field catalog-toolbar__field--grow">
+    <label for="catalog-search">Buscar</label>
+    <input
+      id="catalog-search"
+      type="search"
+      name="q"
+      [(ngModel)]="draft.q"
+      placeholder="Paracetamol, vitaminas, analgésicos..."
+    />
+  </div>
+
+  <div class="catalog-toolbar__field">
+    <label for="catalog-category">Categoría</label>
+    <select id="catalog-category" name="categoriaId" [(ngModel)]="draft.categoriaId">
+      <option [ngValue]="undefined">Todas</option>
+      <option *ngFor="let category of categories" [ngValue]="category.categoriaId">
+        {{ category.nombreCategoria }}
+      </option>
+    </select>
+  </div>
+
+  <div class="catalog-toolbar__field">
+    <label for="catalog-sort">Ordenar</label>
+    <select id="catalog-sort" name="sortBy" [(ngModel)]="draft.sortBy">
+      <option [ngValue]="undefined">Relevancia base</option>
+      <option value="nombreProducto">Nombre</option>
+      <option value="precioVisible">Precio</option>
+      <option value="fechaActualizacion">Actualización</option>
+    </select>
+  </div>
+
+  <div class="catalog-toolbar__field">
+    <label for="catalog-direction">Dirección</label>
+    <select id="catalog-direction" name="sortDirection" [(ngModel)]="draft.sortDirection">
+      <option [ngValue]="undefined">Automática</option>
+      <option value="ASC">Ascendente</option>
+      <option value="DESC">Descendente</option>
+    </select>
+  </div>
+
+  <div class="catalog-toolbar__field">
+    <label for="catalog-limit">Mostrar</label>
+    <select id="catalog-limit" name="limit" [(ngModel)]="draft.limit">
+      <option *ngFor="let option of pageSizeOptions" [ngValue]="option">
+        {{ option }} por página
+      </option>
+    </select>
+  </div>
+
+  <div class="catalog-toolbar__actions">
+    <button class="button button--primary" type="submit">Aplicar</button>
+    <button class="button button--ghost" type="button" (click)="onClear()">Limpiar</button>
+  </div>
+</form>

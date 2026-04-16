@@ -1,0 +1,171 @@
+/* ============================================================
+ * Reset Base - Desktop Consultorio
+ *
+ * Defaults globales para contenedores, scrollbars, separators
+ * ============================================================ */
+
+.root {
+    -fx-font-family: "Segoe UI", "Inter", "Arial", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f4f6f8;
+}
+
+/* --- ScrollPane --- */
+.scroll-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: transparent;
+}
+
+/* --- Scrollbar Global --- */
+.scroll-bar:vertical {
+    -fx-pref-width: 8;
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal {
+    -fx-pref-height: 8;
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #94a3b8;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
+/* --- ListView --- */
+.list-view {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell {
+    -fx-padding: 10 12 10 12;
+    -fx-border-color: transparent transparent #f0f3f6 transparent;
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: #f8fafc;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: rgba(34,135,103,0.08);
+}
+
+.list-view .placeholder .label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7f8e;
+}
+
+/* --- Separator --- */
+.separator .line {
+    -fx-border-color: #e2e8f0 transparent transparent transparent;
+}
+
+/* --- Label Default --- */
+.label {
+    -fx-text-fill: #1a2a36;
+}
+
+/* --- Hyperlink --- */
+.hyperlink {
+    -fx-text-fill: #228767;
+    -fx-underline: false;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #1a6e54;
+    -fx-underline: true;
+}
+
+.hyperlink:visited {
+    -fx-text-fill: #145846;
+}
+
+/* --- Progress Bar --- */
+.progress-bar .track {
+    -fx-background-color: #e2e8f0;
+    -fx-background-radius: 4;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #228767;
+    -fx-background-radius: 4;
+}
+
+/* --- CheckBox --- */
+.check-box .box {
+    -fx-border-color: #d5dce3;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #228767;
+    -fx-border-color: #228767;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+/* --- RadioButton --- */
+.radio-button .radio {
+    -fx-border-color: #d5dce3;
+}
+
+.radio-button:selected .radio {
+    -fx-border-color: #228767;
+}
+
+.radio-button .dot {
+    -fx-background-color: #228767;
+}
+
+/* --- Spinner --- */
+.spinner {
+    -fx-background-color: white;
+    -fx-border-color: #d5dce3;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-color: #f0f3f6;
+    -fx-border-color: #d5dce3;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: #e2e8f0;
+}

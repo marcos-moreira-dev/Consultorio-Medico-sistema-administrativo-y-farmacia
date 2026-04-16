@@ -1,0 +1,4 @@
+.detail-grid-layout {
+  display: grid;
+  gap: var(--space-24);
+}

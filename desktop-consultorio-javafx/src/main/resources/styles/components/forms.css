@@ -1,0 +1,186 @@
+/* ============================================================
+ * Formularios - Desktop Consultorio
+ *
+ * Escala de espaciado: 4, 8, 12, 16, 24, 32, 40, 48
+ * Radios: 8px - 10px
+ * ============================================================ */
+
+/* --- Form Field Container --- */
+.form-field {
+    -fx-spacing: 4;
+}
+
+.form-field-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #3d5260;
+}
+
+.form-field-label .required-mark {
+    -fx-text-fill: #ef4444;
+    -fx-font-size: 14px;
+}
+
+.form-field-hint {
+    -fx-font-size: 11px;
+    -fx-text-fill: #6b7f8e;
+}
+
+.form-field-error {
+    -fx-font-size: 11px;
+    -fx-text-fill: #ef4444;
+    -fx-font-weight: 500;
+}
+
+/* --- Text Field --- */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #d5dce3;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 12 10 12;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1a2a36;
+    -fx-border-width: 1;
+}
+
+.text-field:focused {
+    -fx-border-color: #228767;
+    -fx-effect: dropshadow(gaussian, rgba(34,135,103,0.15), 8, 0, 0, 0);
+}
+
+.text-field:error {
+    -fx-border-color: #ef4444;
+    -fx-background-color: #fef2f2;
+}
+
+.text-field:disabled {
+    -fx-background-color: #f0f3f6;
+    -fx-opacity: 0.6;
+}
+
+/* --- Search Field --- */
+.search-field {
+    -fx-background-color: white;
+    -fx-border-color: #d5dce3;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8 12 8 32;
+    -fx-font-size: 14px;
+}
+
+.search-field:focused {
+    -fx-border-color: #228767;
+}
+
+/* --- Text Area --- */
+.text-area {
+    -fx-background-color: white;
+    -fx-border-color: #d5dce3;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-size: 14px;
+}
+
+.text-area:focused {
+    -fx-border-color: #228767;
+}
+
+.text-area .content {
+    -fx-padding: 10 12 10 12;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.char-counter {
+    -fx-font-size: 11px;
+    -fx-text-fill: #6b7f8e;
+    -fx-alignment: center-right;
+}
+
+.char-counter.warning {
+    -fx-text-fill: #f59e0b;
+}
+
+.char-counter.error {
+    -fx-text-fill: #ef4444;
+}
+
+/* --- ComboBox / Select --- */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #d5dce3;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 12 10 12;
+    -fx-font-size: 14px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #228767;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #6b7f8e;
+}
+
+.combo-box .list-cell {
+    -fx-padding: 10 12 10 12;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: #f0f3f6;
+}
+
+/* --- DatePicker --- */
+.date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #d5dce3;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 12 10 12;
+    -fx-font-size: 14px;
+}
+
+.date-picker:focused {
+    -fx-border-color: #228767;
+}
+
+/* --- Form Group --- */
+.form-group {
+    -fx-spacing: 16;
+}
+
+.form-group-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a2a36;
+    -fx-padding: 0 0 8 0;
+}
+
+/* --- Inline Form Actions --- */
+.form-actions {
+    -fx-spacing: 12;
+    -fx-alignment: center-right;
+    -fx-padding: 16 0 0 0;
+}
+
+/* --- Validation States --- */
+.field-valid .text-field,
+.field-valid .combo-box,
+.field-valid .date-picker {
+    -fx-border-color: #22c55e;
+}
+
+.field-invalid .text-field,
+.field-invalid .combo-box,
+.field-invalid .date-picker {
+    -fx-border-color: #ef4444;
+    -fx-background-color: #fef2f2;
+}

@@ -1,0 +1,14 @@
+{
+  "/api/v1": {
+    "target": "http://backend-farmacia:3001",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  },
+  "/media": {
+    "target": "http://backend-farmacia:3001",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  }
+}

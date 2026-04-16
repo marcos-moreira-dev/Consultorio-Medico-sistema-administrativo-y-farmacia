@@ -1,0 +1,11 @@
+<div class="featured-categories">
+  <a
+    *ngFor="let category of categories"
+    class="featured-categories__item"
+    [routerLink]="['/catalogo']"
+    [queryParams]="{ categoriaId: category.categoriaId }"
+  >
+    <strong>{{ category.nombreCategoria }}</strong>
+    <span>{{ category.cantidadProductosVisibles }} productos visibles</span>
+  </a>
+</div>

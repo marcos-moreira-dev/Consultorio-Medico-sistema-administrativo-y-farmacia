@@ -1,0 +1,27 @@
+.catalog-empty-state {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-32);
+  text-align: center;
+  display: grid;
+  gap: var(--space-12);
+  justify-items: center;
+}
+
+.catalog-empty-state__icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-surface-subtle);
+  font-size: 1.8rem;
+}
+
+@media (max-width: 640px) {
+  .catalog-empty-state {
+    padding: var(--space-24);
+  }
+}

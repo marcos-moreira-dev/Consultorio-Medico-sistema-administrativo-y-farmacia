@@ -1,0 +1,12 @@
+/* ============================================================
+ * Design Tokens: Radii - Desktop Consultorio
+ * ============================================================ */
+
+.root {
+    -radius-sm: 4px;
+    -radius-md: 6px;
+    -radius-lg: 10px;
+    -radius-xl: 14px;
+    -radius-pill: 999px;
+    -radius-circle: 50%;
+}

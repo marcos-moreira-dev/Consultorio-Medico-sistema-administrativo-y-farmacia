@@ -1,0 +1,60 @@
+<section class="product-info">
+  <div class="product-info__meta">
+    <a
+      *ngIf="product.nombreCategoria"
+      class="product-info__category"
+      [routerLink]="['/catalogo']"
+      [queryParams]="{ categoriaId: product.categoriaId }"
+    >
+      {{ product.nombreCategoria }}
+    </a>
+    <app-availability-badge
+      [estado]="product.estadoDisponibilidad"
+      [disponible]="product.disponible"
+    ></app-availability-badge>
+  </div>
+
+  <h1>{{ product.nombreProducto }}</h1>
+  <p class="product-info__presentation">{{ product.presentacion }}</p>
+
+  <p *ngIf="product.descripcionBreve" class="product-info__description">
+    {{ product.descripcionBreve }}
+  </p>
+
+  <div class="product-info__price-row">
+    <strong class="product-info__price">{{ product.precioVisible | money }}</strong>
+    <span class="product-info__timestamp">
+      Actualizado: {{ formatDate(product.fechaActualizacion) }}
+    </span>
+  </div>
+
+  <div class="product-info__facts">
+    <article class="product-info__fact">
+      <span>Presentación</span>
+      <strong>{{ product.presentacion }}</strong>
+    </article>
+
+    <article class="product-info__fact">
+      <span>Categoría</span>
+      <strong>{{ product.nombreCategoria || 'Catálogo público' }}</strong>
+    </article>
+
+    <article class="product-info__fact">
+      <span>Estado público</span>
+      <strong>{{ disponibilidadLabel() }}</strong>
+    </article>
+  </div>
+
+  <div class="product-info__actions">
+    <a class="button button--primary" [routerLink]="catalogRouterLink" [queryParams]="catalogQueryParams">
+      Seguir explorando
+    </a>
+    <a
+      class="button button--ghost"
+      [routerLink]="['/catalogo']"
+      [queryParams]="{ categoriaId: product.categoriaId }"
+    >
+      Ver categoría
+    </a>
+  </div>
+</section>

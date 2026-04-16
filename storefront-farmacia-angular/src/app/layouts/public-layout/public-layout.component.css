@@ -1,0 +1,31 @@
+.public-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  background:
+    radial-gradient(circle at top left, rgba(33, 135, 103, 0.08), transparent 24rem),
+    linear-gradient(180deg, var(--color-background-muted) 0%, var(--color-background) 18rem);
+  transition: opacity 0.15s ease;
+}
+
+.public-layout__skip-link {
+  position: absolute;
+  left: var(--space-16);
+  top: var(--space-12);
+  z-index: 30;
+  transform: translateY(-200%);
+  padding: var(--space-12) var(--space-16);
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-strong);
+  color: var(--color-surface);
+  text-decoration: none;
+  box-shadow: var(--shadow-card);
+}
+
+.public-layout__skip-link:focus {
+  transform: translateY(0);
+}
+
+.public-layout__main {
+  padding-block-end: var(--space-40);
+}
